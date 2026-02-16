@@ -1,0 +1,238 @@
+body {
+    font-family: Arial;
+    background-color: #CCCCFF;
+    display: flex;             
+    justify-content: center;   
+    align-items: center;      
+    min-height: 80vh;         
+    margin: 0;  
+}
+li{
+    animation: fadeIn 0.3s ease forwards;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 150px;
+    margin-bottom: 8px;
+    margin-top: 10px;
+   
+    border-radius: 6px;
+}
+.container {
+    border: 5px solid #E6E6FAed;
+    background: #F8C8DC;
+    padding:20px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    align-items: center;
+    position: relative;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity:0.6;
+    transition: 0.3s ease;
+}
+.inputarea {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#taskInput{
+    padding:10px;
+    border:2px solid black;
+    border-radius: 8px;
+}
+#addbtn{
+    background-color: azure;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button{
+     cursor: pointer;
+     margin-bottom: 8px;
+}
+li.high{
+    background-color: #FA8072;
+}
+li.low{
+    background-color: #F0EAD6;
+}
+
+#taskpriority{
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#clearCompletedBtn{
+    cursor: pointer;
+    margin-bottom: 7px;
+    background-color: azure;
+    border-radius: 6px;
+}
+li span{
+    margin-right: 10px; 
+    word-wrap: break-word;
+}
+li button {
+    margin-left: 5px;   
+}
+.confetti{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: red; 
+  pointer-events: none;
+  z-index: 1000;
+  border-radius: 50%;
+  animation: fall 1s linear forwards;
+}
+
+
+
+@keyframes fadeIn{
+    from {
+        opacity:0;
+        transform:translateY(-15px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes fadeOut{
+    from {
+        opacity:1;
+        transform:translateX(0px);
+    }
+    to {
+        opacity:0;
+        transform:translateX(50px);
+    }
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) rotate(360deg); opacity: 0; }
+}
+
+
+.removing{
+    animation: fadeOut 0.3s ease forwards;
+
+}
+
+#progressContainer{
+    width:100%;
+    height:10px;
+    background-color: burlywood;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+#progressBar{
+    width: 0%;
+    height: 100%;
+    background-color: lightgreen;
+    transition: width 0.3s ease;
+}
+
+body.dark {
+    background-color: #380048;
+    color: #f0f0f0;
+}
+
+body.dark .container {
+    background-color: #46021f;
+    border-color: #444466;
+}
+
+body.dark input, 
+body.dark select, 
+body.dark button
+body.dark clearCompletedBtn
+body.dark addbtn
+body.dark .inputarea
+body.dark taskDate {
+    background-color: #cacacd;
+    color: #0b0000;
+    border: 1px solid #666688;
+}
+
+body.dark li.low {
+    background-color: #555544;
+}
+
+body.dark li.high {
+    background-color: #aa5555;
+}
+
+
+body,
+body * {
+     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* #themeToggleBtn:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+
+} */
+
+#themeToggleBtn {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color:#D8BFD8 ;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+
+}
+
+#themeIcon {
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+
+body.dark #themeIcon {
+    transform: rotate(360deg);
+}
+
+
+li.today-task {
+    border-left: 4px solid #3498db; /* blue highlight */
+    background-color: #e0f7fa; /* light blue background */
+}
+
+#taskDate{
+    border-radius: 8px;
+    background-color:azure ;
+
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #d8bfff;
+  border: none;
+  transition: 0.2s;
+}
+
+.filter-buttons button:hover {
+  background-color: #c099ff;
+}

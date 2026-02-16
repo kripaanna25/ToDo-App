@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container">
+    
+    <h1>My Todo App</h1> 
+    <!-- <button id="themeToggleBtn">🌙 Dark Mode</button> -->
+     <button id="themeToggleBtn">
+  <span id="themeIcon">🌙</span> Mode
+</button>
+  <div class="inputarea">
+    <input type="text" id="taskInput" placeholder="Enter your Task">
+    <select id="taskpriority">
+      <option value="low">Low</option>
+      <option value="high">High</option>
+    </select>
+    <input type="date" id="taskDate">
+    <button id="addbtn" onclick="addTask()">Add</button>
+    <button id="clearCompletedBtn">Clear Completed</button>
+    
+  </div>
+  <div class="filter-buttons">
+  <button onclick="filterTasks('all')">All</button>
+  <button onclick="filterTasks('completed')">Completed</button>
+  <button onclick="filterTasks('pending')">Pending</button>
+  <button onclick="filterTasks('high')">High Priority</button>
+  <button onclick="filterTasks('low')">Low Priority</button>
+  </div>
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+  <ul id="taskList"></ul>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
